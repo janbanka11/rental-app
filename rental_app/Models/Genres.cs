@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace rental_app.Models
 {
-    internal class Genres
+    public class Genres
     {
         public int GenresId { get; set; }
         public string Genre { get; set; }

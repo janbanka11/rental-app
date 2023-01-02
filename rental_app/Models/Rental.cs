@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace rental_app.Models
 {
-    internal class Rental
+    public class Rental
     {
         public int RentalId { get; set; }
         public int CustomerId { get; set; }
