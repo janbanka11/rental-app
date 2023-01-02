@@ -8,7 +8,7 @@ namespace rental_app.Models
 {
     internal class Genres
     {
-        public int IdGenre { get; set; }
+        public int GenresId { get; set; }
         public string Genre { get; set; }
     }
 }
