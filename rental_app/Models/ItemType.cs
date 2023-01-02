@@ -8,5 +8,7 @@ namespace rental_app.Models
 {
     internal class ItemType
     {
+        public int IdType { get; set; }
+        public string Type { get; set; }
     }
 }
