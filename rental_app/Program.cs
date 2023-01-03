@@ -15,23 +15,8 @@ namespace rental_app
         [STAThread]
         static void Main()
         {
-            using RentalAppContext context = new RentalAppContext();
-
-            Customer customer = new Customer()
-            {
-                Username = "Marcin",
-                Password = "Dolowy",
-                Name = "Mariusz",
-                Surname = "Dolowy",
-                DateOfBirth = DateTime.Now
-            };
-            context.Customers.Add(customer);
-            customer.Surname = "banka";
-            
-            context.SaveChanges();
-
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new InitialForm());
         }
     }
 }
