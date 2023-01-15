@@ -10,7 +10,7 @@ namespace rental_app.Models
     {
         public int ItemId { get; set; }
         public int GenresId { get; set; }
-        public ItemType Type { get; set; }
+        public int ItemTypeId { get; set; }
         public string Author { get; set; }
         public string Title { get; set; }
         public int Price { get; set; }

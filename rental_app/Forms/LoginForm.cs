@@ -5,10 +5,10 @@ using rental_app.Models;
 
 namespace rental_app
 {
-
     public partial class LoginForm : Form
     {
         RentalAppContext context = new RentalAppContext();
+        static public string username { get; set; }
         public LoginForm()
         {
             InitializeComponent();
@@ -29,6 +29,7 @@ namespace rental_app
                                                                 && c.Password == passwordTextBox.Text);
             if(customer != null)
             {
+                username = usernameTextBox.Text;
                 this.Hide();
                 var controlForm = new ControlForm();
                 controlForm.Closed += (s, args) => this.Close();
