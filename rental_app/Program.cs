@@ -16,7 +16,7 @@ namespace rental_app
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new InitialForm());
+            Application.Run(new LoginForm());
         }
     }
 }

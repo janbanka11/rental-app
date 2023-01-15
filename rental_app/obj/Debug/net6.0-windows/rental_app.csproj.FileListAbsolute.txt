@@ -58,4 +58,6 @@ C:\Users\Janek\source\repos\rental_app\rental_app\obj\Debug\net6.0-windows\refin
 C:\Users\Janek\source\repos\rental_app\rental_app\obj\Debug\net6.0-windows\rental_app.pdb
 C:\Users\Janek\source\repos\rental_app\rental_app\obj\Debug\net6.0-windows\rental_app.genruntimeconfig.cache
 C:\Users\Janek\source\repos\rental_app\rental_app\obj\Debug\net6.0-windows\ref\rental_app.dll
-C:\Users\Janek\source\repos\rental_app\rental_app\obj\Debug\net6.0-windows\rental_app.InitialForm.resources
+C:\Users\Janek\source\repos\rental_app\rental_app\obj\Debug\net6.0-windows\rental_app.LoginForm.resources
+C:\Users\Janek\source\repos\rental_app\rental_app\obj\Debug\net6.0-windows\rental_app.Forms.RegisterForm.resources
+C:\Users\Janek\source\repos\rental_app\rental_app\obj\Debug\net6.0-windows\rental_app.Forms.ControlForm.resources
