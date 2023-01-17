@@ -10,5 +10,7 @@ namespace rental_app.Models
     {
         public int GenresId { get; set; }
         public string Genre { get; set; }
+
+        public ICollection<Item> Items { get; set; }
     }
 }
