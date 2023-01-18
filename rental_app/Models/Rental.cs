@@ -10,8 +10,13 @@ namespace rental_app.Models
     public class Rental
     {
         public int RentalId { get; set; }
+
         public int CustomerId { get; set; }
-        public int ItemId { get; set; }
+        public Customer Customer { get; set; }
+
+        public int ItemId { get; set; } 
+        public Item Item { get; set; }
+
         public DateTime RentalStart { get; set; }
         public DateTime RentalEnd { get; set; }
         [Column(TypeName = "decimal(6, 2)")]

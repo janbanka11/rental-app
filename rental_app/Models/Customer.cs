@@ -18,5 +18,7 @@ namespace rental_app.Models
         public string Surname { get; set; }
         public DateTime DateOfBirth { get; set; }
 
+        ICollection<Rental> Rentals { get; set; }
+
     }
 }
