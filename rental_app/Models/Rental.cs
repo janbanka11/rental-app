@@ -21,5 +21,15 @@ namespace rental_app.Models
         public DateTime RentalEnd { get; set; }
         [Column(TypeName = "decimal(6, 2)")]
         public decimal RentalPrice { get; set; }
+
+        public Rental(int rentalId, int customerId,  int itemId,  DateTime rentalStart, DateTime rentalEnd, decimal rentalPrice)
+        {
+            RentalId = rentalId;
+            CustomerId = customerId;
+            ItemId = itemId;
+            RentalStart = rentalStart;
+            RentalEnd = rentalEnd;
+            RentalPrice = rentalPrice;
+        }
     }
 }

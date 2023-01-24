@@ -18,7 +18,14 @@ namespace rental_app.Models
         public string Surname { get; set; }
         public DateTime DateOfBirth { get; set; }
 
-        ICollection<Rental> Rentals { get; set; }
-
+        public Customer() { }
+        public Customer(string username, string password, string name, string surname, DateTime dateOfBirth)
+        {
+            Username = username;
+            Password = password;
+            Name = name;
+            Surname = surname;
+            DateOfBirth = dateOfBirth;
+        }
     }
 }

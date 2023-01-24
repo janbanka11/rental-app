@@ -51,7 +51,7 @@ namespace rentalapp.Migrations
 
                     b.HasKey("CustomerId");
 
-                    b.ToTable("customers");
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("rental_app.Models.Genres", b =>
@@ -68,7 +68,7 @@ namespace rentalapp.Migrations
 
                     b.HasKey("GenresId");
 
-                    b.ToTable("genres");
+                    b.ToTable("Genres");
                 });
 
             modelBuilder.Entity("rental_app.Models.Item", b =>
@@ -86,6 +86,9 @@ namespace rentalapp.Migrations
                     b.Property<int>("GenresId")
                         .HasColumnType("int");
 
+                    b.Property<int>("ItemTypeId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
@@ -93,14 +96,13 @@ namespace rentalapp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TypeItemTypeId")
-                        .HasColumnType("int");
-
                     b.HasKey("ItemId");
 
-                    b.HasIndex("TypeItemTypeId");
+                    b.HasIndex("GenresId");
 
-                    b.ToTable("items");
+                    b.HasIndex("ItemTypeId");
+
+                    b.ToTable("Items");
                 });
 
             modelBuilder.Entity("rental_app.Models.ItemType", b =>
@@ -117,7 +119,7 @@ namespace rentalapp.Migrations
 
                     b.HasKey("ItemTypeId");
 
-                    b.ToTable("itemTypes");
+                    b.ToTable("ItemTypes");
                 });
 
             modelBuilder.Entity("rental_app.Models.Rental", b =>
@@ -145,18 +147,54 @@ namespace rentalapp.Migrations
 
                     b.HasKey("RentalId");
 
-                    b.ToTable("rentals");
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("ItemId");
+
+                    b.ToTable("Rentals");
                 });
 
             modelBuilder.Entity("rental_app.Models.Item", b =>
                 {
-                    b.HasOne("rental_app.Models.ItemType", "Type")
-                        .WithMany()
-                        .HasForeignKey("TypeItemTypeId")
+                    b.HasOne("rental_app.Models.Genres", "Genres")
+                        .WithMany("Items")
+                        .HasForeignKey("GenresId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Type");
+                    b.HasOne("rental_app.Models.ItemType", "ItemType")
+                        .WithMany()
+                        .HasForeignKey("ItemTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Genres");
+
+                    b.Navigation("ItemType");
+                });
+
+            modelBuilder.Entity("rental_app.Models.Rental", b =>
+                {
+                    b.HasOne("rental_app.Models.Customer", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("rental_app.Models.Item", "Item")
+                        .WithMany()
+                        .HasForeignKey("ItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("Item");
+                });
+
+            modelBuilder.Entity("rental_app.Models.Genres", b =>
+                {
+                    b.Navigation("Items");
                 });
 #pragma warning restore 612, 618
         }

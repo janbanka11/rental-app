@@ -11,6 +11,9 @@ namespace rental_app.Models
         public int ItemTypeId { get; set; }
         public string Type { get; set; }
 
-        ICollection<Item> Items { get; set; }
+        public ItemType(string type)
+        {
+            Type = type;
+        }
     }
 }

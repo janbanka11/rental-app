@@ -21,7 +21,13 @@ namespace rental_app.Models
         public string Title { get; set; }
         public int Price { get; set; }
 
-        ICollection<Rental> Rentals { get; set; }
-
+        public Item( int genresId, int itemTypeId, string author, string title, int price)
+        {
+            GenresId = genresId;
+            ItemTypeId = itemTypeId;
+            Author = author;
+            Title = title;
+            Price = price;
+        }
     }
 }

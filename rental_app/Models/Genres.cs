@@ -11,6 +11,14 @@ namespace rental_app.Models
         public int GenresId { get; set; }
         public string Genre { get; set; }
 
+        public string ToString()
+        {
+            return Genre;
+        }
+        public Genres(string genre)
+        {
+            Genre = genre;
+        }
         public ICollection<Item> Items { get; set; }
     }
 }
