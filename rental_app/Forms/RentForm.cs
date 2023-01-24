@@ -29,16 +29,6 @@ namespace rental_app.Forms
         {
             context.Items.Load();
 
-            //var g = new List<ItemType>{new Genres("Thriller"),
-            //                         new Genres("Horror"),
-            //                         new Genres("Comedy"),
-            //                         new Genres("Action"),
-            //};
-            //var i = new List<Item> {new Item(1,1,"Robert", "DUpa", 100),
-            //                        new Item(3,2,"Ksiazka", "Maklowicz", 30),
-            //                        new Item(4,3,"Dolowy", "Marcin", 110),
-            //                        new Item(2,2,"Robert", "Dolowy", 120),};
-
             var c = context.Items
                 .Include(i => i.Genres)
                 .Include(i => i.ItemType).ToList();
@@ -48,26 +38,7 @@ namespace rental_app.Forms
                 listdto.Add(new ItemDTO(item.ItemId,item.Genres.Genre, item.ItemType.Type, item.Author, item.Title, item.Price));
             }
 
-
-
-            //context.AddRange(i);
-            // context.SaveChanges();
             this.dataGridView1.DataSource = listdto;
-
-            //Item item = new Item();
-            //    var c = context.Items
-            //        .Include(i => i.Items.)
-            //        .Include(i => i.ItemTypeId)
-            //        .Include(i => i.Author)
-            //        .Include(i => i.Title)
-            //        .Include(i => i.Price)
-            //        .ToList();
-            //    dataGridView1.DataSource = c;
-
-            //ItemType itemType = new ItemType();
-            //var query = from g in item.GenresId
-            //            join m in item.GenresId on g
-
 
         }
 
