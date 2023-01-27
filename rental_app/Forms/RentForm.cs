@@ -3,62 +3,89 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.IdentityModel.Tokens;
 using rental_app.Data;
 using rental_app.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+using rental_app.Utils;
 
 namespace rental_app.Forms
 {
     public partial class RentForm : Form
     {
         RentalAppContext context = new RentalAppContext();
+        List<ItemDTO> moviesList = new List<ItemDTO>();
+        List<ItemDTO> audiobooksList = new List<ItemDTO>();
+        List<ItemDTO> cdDiscsList = new List<ItemDTO>();
         public RentForm()
         {
             InitializeComponent();
         }
+        private List<ItemDTO> getItemsListByType(string type)
+        {
+            var itemsByType = context.Items
+                       .Include(i => i.Genres)
+                       .Include(i => i.ItemType).Where(g => g.ItemType.Type == type);
 
-        private void RentForm_Load(object sender, EventArgs e)
+            List<ItemDTO> itemsByTypeList = new List<ItemDTO>();
+            foreach (var item in itemsByType)
+            {
+                itemsByTypeList.Add(new ItemDTO(item.ItemId, item.Genres.Genre, item.ItemType.Type, item.Author, item.Title, item.Price));
+            }
+            return itemsByTypeList;
+        }
+        private void updateItemsList()
         {
             context.Items.Load();
-
-            var c = context.Items
-                .Include(i => i.Genres)
-                .Include(i => i.ItemType).ToList();
-            List<ItemDTO> listdto = new List<ItemDTO>();
-            foreach (var item in c)
-            {
-                listdto.Add(new ItemDTO(item.ItemId,item.Genres.Genre, item.ItemType.Type, item.Author, item.Title, item.Price));
-            }
-
-            this.dataGridView1.DataSource = listdto;
-
+            moviesList = getItemsListByType("Movie");
+            audiobooksList = getItemsListByType("Audiobook");
+            cdDiscsList = getItemsListByType("CD_Disc");
+        }
+        private void updateDataGridViewSource(List<ItemDTO> items, string currentViewLabelStr)
+        {
+            itemsGridView.DataSource = items;
+            dataGridViewUtils.rentFormColumnHeadersStyle(itemsGridView);
+            currentViewLabel.Text = currentViewLabelStr;
+        }
+        private void RentForm_Load(object sender, EventArgs e)
+        {
+            updateItemsList();
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void movieSourceButton_Click(object sender, EventArgs e)
         {
-            Int32 selectedCellCount =
-            dataGridView1.GetCellCount(DataGridViewElementStates.Selected);
-            if (selectedCellCount > 0)
-            {
-                var cellValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
-                if (!cellValue.IsNullOrEmpty())
-                {
-                    var itemById = context.Items
-                        .Include(i => i.Genres)
-                        .Include(i => i.ItemType).First(g => g.ItemId == Int32.Parse(cellValue)); // pobrany obiekt, na tym context.remove
-                    Console.WriteLine(itemById);
+            updateDataGridViewSource(moviesList, "Movies");
+        }
 
-                }
+        private void audiobookSourceButton_Click(object sender, EventArgs e)
+        {
+            updateDataGridViewSource(audiobooksList, "Audiobooks");
+        }
+
+        private void cdDiscSourceButton_Click(object sender, EventArgs e)
+        {
+            updateDataGridViewSource(cdDiscsList, "CD Discs");
+        }
+
+        private void userRentButton_Click(object sender, EventArgs e)
+        {
+            var cellValue = itemsGridView.Rows[itemsGridView.CurrentCell.RowIndex].Cells[0].Value.ToString();
+            if (cellValue.IsNullOrEmpty()) 
+            { 
+                MessageBox.Show("Select item to rent!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            int customerId = ControlForm.currentlyLoggedCustomer.CustomerId;
+            int itemId = Int32.Parse(cellValue);
+            DateTime startOfRentalDate = DateTime.Now;
+            DateTime endOfRentalDate = startOfRentalDate.AddDays(30);
+            decimal price = Int32.Parse(itemsGridView.Rows[itemsGridView.CurrentCell.RowIndex].Cells[5].Value.ToString());
+            Rental rental = new Rental(
+                customerId,
+                itemId,
+                startOfRentalDate,
+                endOfRentalDate,
+                price
+            );
+            context.Add(rental);
+            context.SaveChanges();
         }
     }
 }

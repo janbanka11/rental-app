@@ -1,23 +1,19 @@
 ﻿using rental_app.Data;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using rental_app.Models;
+
 
 namespace rental_app.Forms
 {
     public partial class ControlForm : Form
     {
         RentalAppContext context = new RentalAppContext();
+        public static Customer currentlyLoggedCustomer;
+
         public ControlForm()
         {
             InitializeComponent();
             helloLabel.Text += LoginForm.username;
+            currentlyLoggedCustomer = context.Customers.First(i => i.Username == LoginForm.username);
         }
 
         private void rentButton_Click(object sender, EventArgs e)

@@ -30,6 +30,7 @@ namespace rental_app
             if(customer != null)
             {
                 username = usernameTextBox.Text;
+                
                 this.Hide();
                 var controlForm = new ControlForm();
                 controlForm.Closed += (s, args) => this.Close();
