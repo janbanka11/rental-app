@@ -47,6 +47,7 @@ namespace rental_app.Forms
         private void RentForm_Load(object sender, EventArgs e)
         {
             updateItemsList();
+            updateDataGridViewSource(moviesList, "Movies");
         }
 
         private void movieSourceButton_Click(object sender, EventArgs e)
@@ -71,21 +72,33 @@ namespace rental_app.Forms
             { 
                 MessageBox.Show("Select item to rent!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            string title = itemsGridView.Rows[itemsGridView.CurrentCell.RowIndex].Cells[4].Value.ToString();
+            if (MessageBox.Show("Are you sure you want to rent '" + title + "' ?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                int customerId = ControlForm.currentlyLoggedCustomer.CustomerId;
+                int itemId = Int32.Parse(cellValue);
+                DateTime startOfRentalDate = DateTime.Now;
+                DateTime endOfRentalDate = startOfRentalDate.AddDays(30);
+                decimal price = Int32.Parse(itemsGridView.Rows[itemsGridView.CurrentCell.RowIndex].Cells[5].Value.ToString());
+                Rental rental = new Rental(
+                    customerId,
+                    itemId,
+                    startOfRentalDate,
+                    endOfRentalDate,
+                    price
+                );
+                context.Add(rental);
+                context.SaveChanges();
+                MessageBox.Show("Rented " + title + " successfuly!", "Success", MessageBoxButtons.OK);
+            }
+        }
 
-            int customerId = ControlForm.currentlyLoggedCustomer.CustomerId;
-            int itemId = Int32.Parse(cellValue);
-            DateTime startOfRentalDate = DateTime.Now;
-            DateTime endOfRentalDate = startOfRentalDate.AddDays(30);
-            decimal price = Int32.Parse(itemsGridView.Rows[itemsGridView.CurrentCell.RowIndex].Cells[5].Value.ToString());
-            Rental rental = new Rental(
-                customerId,
-                itemId,
-                startOfRentalDate,
-                endOfRentalDate,
-                price
-            );
-            context.Add(rental);
-            context.SaveChanges();
+        private void goBackButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var controlForm = new ControlForm();
+            controlForm.Closed += (s, args) => this.Close();
+            controlForm.Show();
         }
     }
 }
