@@ -1,10 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.IdentityModel.Tokens;
 using rental_app.Data;
 using rental_app.Models;
-using System.Data;
 using rental_app.Utils;
+using System.Data;
 
 namespace rental_app.Forms
 {
@@ -68,8 +67,8 @@ namespace rental_app.Forms
         private void userRentButton_Click(object sender, EventArgs e)
         {
             var cellValue = itemsGridView.Rows[itemsGridView.CurrentCell.RowIndex].Cells[0].Value.ToString();
-            if (cellValue.IsNullOrEmpty()) 
-            { 
+            if (cellValue.IsNullOrEmpty())
+            {
                 MessageBox.Show("Select item to rent!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             string title = itemsGridView.Rows[itemsGridView.CurrentCell.RowIndex].Cells[4].Value.ToString();

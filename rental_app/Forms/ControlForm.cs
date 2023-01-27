@@ -23,5 +23,13 @@ namespace rental_app.Forms
             rentForm.Closed += (s, args) => this.Close();
             rentForm.Show();
         }
+
+        private void rentalsButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var userRentalsForm = new UserRentalsForm();
+            userRentalsForm.Closed += (s, args) => this.Close();
+            userRentalsForm.Show();
+        }
     }
 }

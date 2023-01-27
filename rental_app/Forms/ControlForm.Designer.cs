@@ -73,6 +73,7 @@
             this.rentalsButton.TabIndex = 4;
             this.rentalsButton.Text = "Your rentals";
             this.rentalsButton.UseVisualStyleBackColor = true;
+            this.rentalsButton.Click += new System.EventHandler(this.rentalsButton_Click);
             // 
             // ControlForm
             // 

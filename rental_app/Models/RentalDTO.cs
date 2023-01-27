@@ -1,26 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace rental_app.Models
+﻿namespace rental_app.Models
 {
-    public class RentalDTO
+    public class RentalDTO : IComparable<RentalDTO>
     {
-        public RentalDTO(int rentalId, int customerId, int itemId, DateTime rentalStart, DateTime rentalEnd, decimal rentalPrice)
+        public RentalDTO(int rentalId, string customerName, string itemType, string itemTitle, DateTime rentalStart, DateTime rentalEnd, decimal rentalPrice)
         {
             RentalId = rentalId;
-            CustomerId = customerId;
-            ItemId = itemId;
+            CustomerName = customerName;
+            ItemType = itemType;
+            ItemTitle = itemTitle;
             RentalStart = rentalStart;
             RentalEnd = rentalEnd;
             RentalPrice = rentalPrice;
         }
-
+        public int CompareTo(RentalDTO rentalDTO)
+        {
+            if (rentalDTO == null) return 1;
+            return this.RentalStart.CompareTo(rentalDTO.RentalStart);
+        }
         public int RentalId { get; set; }
-        public int CustomerId { get; set; }
-        public int ItemId { get; set; }
+        public string CustomerName { get; set; }
+        public string ItemTitle { get; set; }
+        public string ItemType { get; set; }
         public DateTime RentalStart { get; set; }
         public DateTime RentalEnd { get; set; }
         public decimal RentalPrice { get; set; }

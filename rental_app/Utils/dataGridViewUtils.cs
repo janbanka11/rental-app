@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace rental_app.Utils
+﻿namespace rental_app.Utils
 {
     internal class dataGridViewUtils
     {
@@ -14,6 +7,16 @@ namespace rental_app.Utils
             dataGridView.Columns[0].Visible = false;
             dataGridView.Columns["GenreName"].HeaderText = "Genre";
             dataGridView.Columns["ItemTypeName"].Visible = false;
+        }
+        static public void userRentalFormColumnHeadersStyle(DataGridView dataGridView)
+        {
+            dataGridView.Columns["RentalId"].Visible = false;
+            dataGridView.Columns["CustomerName"].Visible = false;
+            dataGridView.Columns["ItemTitle"].HeaderText = "Title";
+            dataGridView.Columns["ItemType"].HeaderText = "Type";
+            dataGridView.Columns["RentalStart"].HeaderText = "Start date";
+            dataGridView.Columns["RentalEnd"].HeaderText = "End date";
+            dataGridView.Columns["RentalPrice"].HeaderText = "Price";
         }
     }
 }

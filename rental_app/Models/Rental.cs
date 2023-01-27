@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace rental_app.Models
 {
@@ -14,7 +9,7 @@ namespace rental_app.Models
         public int CustomerId { get; set; }
         public Customer Customer { get; set; }
 
-        public int ItemId { get; set; } 
+        public int ItemId { get; set; }
         public Item Item { get; set; }
 
         public DateTime RentalStart { get; set; }
@@ -22,7 +17,7 @@ namespace rental_app.Models
         [Column(TypeName = "decimal(6, 2)")]
         public decimal RentalPrice { get; set; }
 
-        public Rental(int customerId,  int itemId,  DateTime rentalStart, DateTime rentalEnd, decimal rentalPrice)
+        public Rental(int customerId, int itemId, DateTime rentalStart, DateTime rentalEnd, decimal rentalPrice)
         {
             CustomerId = customerId;
             ItemId = itemId;
