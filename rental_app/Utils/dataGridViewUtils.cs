@@ -7,6 +7,8 @@
             dataGridView.Columns[0].Visible = false;
             dataGridView.Columns["GenreName"].HeaderText = "Genre";
             dataGridView.Columns["ItemTypeName"].Visible = false;
+            dataGridView.Columns["GenreId"].Visible = false;
+            dataGridView.Columns["ItemTypeId"].Visible = false;
         }
         static public void userRentalFormColumnHeadersStyle(DataGridView dataGridView)
         {

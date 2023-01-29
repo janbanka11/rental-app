@@ -15,6 +15,5 @@ namespace rental_app.Models
         {
             Genre = genre;
         }
-        public ICollection<Item> Items { get; set; }
     }
 }

@@ -1,7 +1,0 @@
-rental_app/bin
-rental_app/obj
-*.mdf
-*.ldf
-*.user
-*.csproj
-rental_app/Migrations

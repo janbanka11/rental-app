@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ri8W2Svo0nrtkH4nWLzLFKk4yD13e52bIXSoidJ8aCdyfi9whBinwGvnKuj0dOizNJxor2mMV+NxFocXfMArEQ==",
+  "dgSpecHash": "3gc0R3TanRv2Ybvbuv/fwoWPXDXCF5mTi3aLJUJ543ux1qZEM8hNWQL1wBgzlCaBSNJ8Hcei3kXA469vA21BnQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\banka\\Source\\Repos\\rental-app\\rental_app\\rental_app.csproj",
+  "projectFilePath": "C:\\Users\\banka\\source\\repos\\rental-app\\rental_app\\rental_app.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\banka\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\banka\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

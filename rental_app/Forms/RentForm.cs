@@ -71,14 +71,14 @@ namespace rental_app.Forms
             {
                 MessageBox.Show("Select item to rent!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            string title = itemsGridView.Rows[itemsGridView.CurrentCell.RowIndex].Cells[4].Value.ToString();
+            string title = itemsGridView.Rows[itemsGridView.CurrentCell.RowIndex].Cells[6].Value.ToString();
             if (MessageBox.Show("Are you sure you want to rent '" + title + "' ?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 int customerId = ControlForm.currentlyLoggedCustomer.CustomerId;
                 int itemId = Int32.Parse(cellValue);
                 DateTime startOfRentalDate = DateTime.Now;
                 DateTime endOfRentalDate = startOfRentalDate.AddDays(30);
-                decimal price = Int32.Parse(itemsGridView.Rows[itemsGridView.CurrentCell.RowIndex].Cells[5].Value.ToString());
+                decimal price = Int32.Parse(itemsGridView.Rows[itemsGridView.CurrentCell.RowIndex].Cells[7].Value.ToString());
                 Rental rental = new Rental(
                     customerId,
                     itemId,
