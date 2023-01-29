@@ -130,3 +130,4 @@ C:\Users\banka\Source\Repos\rental-app\rental_app\bin\Debug\net6.0-windows\runti
 C:\Users\banka\Source\Repos\rental-app\rental_app\obj\Debug\net6.0-windows\rental_app.csproj.CopyComplete
 C:\Users\banka\Source\Repos\rental-app\rental_app\obj\Debug\net6.0-windows\rental_app.genruntimeconfig.cache
 C:\Users\banka\Source\Repos\rental-app\rental_app\obj\Debug\net6.0-windows\ref\rental_app.dll
+C:\Users\banka\source\repos\rental-app\rental_app\obj\Debug\net6.0-windows\rental_app.Forms.AdminDisplayAllRentalsForm.resources

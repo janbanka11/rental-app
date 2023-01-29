@@ -19,12 +19,10 @@ namespace rental_app.Forms
 
         private void displayUserRentalsButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void AdminSettingsControlForm_Load(object sender, EventArgs e)
-        {
-
+            this.Hide();
+            var adminDisplayAllRentalsForm = new AdminDisplayAllRentalsForm();
+            adminDisplayAllRentalsForm.Closed += (s, args) => this.Close();
+            adminDisplayAllRentalsForm.Show();
         }
 
         private void goBackButton_Click(object sender, EventArgs e)
@@ -41,6 +39,11 @@ namespace rental_app.Forms
             var adminItemsManagementForm = new AdminItemsManagementForm();
             adminItemsManagementForm.Closed += (s, args) => this.Close();
             adminItemsManagementForm.Show();
+        }
+
+        private void AdminSettingsControlForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
