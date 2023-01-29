@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace rental_app.Models
 {
-    public class Item
+    public class Item 
     {
         public int ItemId { get; set; }
 

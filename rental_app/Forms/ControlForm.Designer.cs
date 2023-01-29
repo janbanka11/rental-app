@@ -32,6 +32,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.rentButton = new System.Windows.Forms.Button();
             this.rentalsButton = new System.Windows.Forms.Button();
+            this.adminSettingsButton = new System.Windows.Forms.Button();
+            this.sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +59,7 @@
             // 
             // rentButton
             // 
-            this.rentButton.Location = new System.Drawing.Point(114, 155);
+            this.rentButton.Location = new System.Drawing.Point(113, 132);
             this.rentButton.Name = "rentButton";
             this.rentButton.Size = new System.Drawing.Size(209, 89);
             this.rentButton.TabIndex = 3;
@@ -67,7 +69,7 @@
             // 
             // rentalsButton
             // 
-            this.rentalsButton.Location = new System.Drawing.Point(380, 155);
+            this.rentalsButton.Location = new System.Drawing.Point(379, 132);
             this.rentalsButton.Name = "rentalsButton";
             this.rentalsButton.Size = new System.Drawing.Size(200, 89);
             this.rentalsButton.TabIndex = 4;
@@ -75,17 +77,30 @@
             this.rentalsButton.UseVisualStyleBackColor = true;
             this.rentalsButton.Click += new System.EventHandler(this.rentalsButton_Click);
             // 
+            // adminSettingsButton
+            // 
+            this.adminSettingsButton.Location = new System.Drawing.Point(252, 243);
+            this.adminSettingsButton.Name = "adminSettingsButton";
+            this.adminSettingsButton.Size = new System.Drawing.Size(200, 89);
+            this.adminSettingsButton.TabIndex = 5;
+            this.adminSettingsButton.Text = "Admin settings";
+            this.adminSettingsButton.UseVisualStyleBackColor = true;
+            this.adminSettingsButton.Visible = false;
+            this.adminSettingsButton.Click += new System.EventHandler(this.adminSettingsButton_Click);
+            // 
             // ControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(705, 367);
+            this.Controls.Add(this.adminSettingsButton);
             this.Controls.Add(this.rentalsButton);
             this.Controls.Add(this.rentButton);
             this.Controls.Add(this.panel1);
             this.Name = "ControlForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ControlForm";
+            this.Load += new System.EventHandler(this.ControlForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -98,5 +113,7 @@
         private Panel panel1;
         private Button rentButton;
         private Button rentalsButton;
+        private Button adminSettingsButton;
+        private Microsoft.Data.SqlClient.SqlCommandBuilder sqlCommandBuilder1;
     }
 }

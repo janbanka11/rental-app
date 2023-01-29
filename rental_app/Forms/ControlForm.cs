@@ -31,5 +31,21 @@ namespace rental_app.Forms
             userRentalsForm.Closed += (s, args) => this.Close();
             userRentalsForm.Show();
         }
+
+        private void ControlForm_Load(object sender, EventArgs e)
+        {
+            if(currentlyLoggedCustomer.Username == "admin")
+            {
+                adminSettingsButton.Visible = true;
+            }
+        }
+
+        private void adminSettingsButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var adminSettingsControlForm = new AdminSettingsControlForm();
+            adminSettingsControlForm.Closed += (s, args) => this.Close();
+            adminSettingsControlForm.Show();
+        }
     }
 }

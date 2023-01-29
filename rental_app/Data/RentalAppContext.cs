@@ -17,7 +17,7 @@ public class RentalAppContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Janek\source\repos\rental_app\rental_app\RentalDatabase.mdf;Integrated Security=True");
+        optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\banka\Source\Repos\rental-app\rental_app\RentalDatabase.mdf;Integrated Security=True");
     }
 
 }

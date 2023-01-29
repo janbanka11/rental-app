@@ -9,7 +9,7 @@ namespace rental_app.Forms
 {
     public class ItemDTO
     {
-        public ItemDTO(int itemId, string genreName, string itemTypeName, string author, string title, int price)
+        public ItemDTO(int itemId, string genreName, string itemTypeName, string author, string title, decimal price)
         {
             ItemId = itemId;
             GenreName = genreName;
@@ -27,7 +27,7 @@ namespace rental_app.Forms
 
         public string Author { get; set; }
         public string Title { get; set; }
-        public int Price { get; set; }
+        public decimal Price { get; set; }
 
     }
 }
