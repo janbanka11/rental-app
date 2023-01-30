@@ -42,6 +42,7 @@
             // 
             this.itemsGridView.AllowUserToAddRows = false;
             this.itemsGridView.AllowUserToDeleteRows = false;
+            this.itemsGridView.BackgroundColor = System.Drawing.Color.White;
             this.itemsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.itemsGridView.Location = new System.Drawing.Point(12, 58);
             this.itemsGridView.Name = "itemsGridView";

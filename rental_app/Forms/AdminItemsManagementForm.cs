@@ -67,6 +67,7 @@ namespace rental_app.Forms
 
         bool checkIfEnteredItemIsCorrect()
         {
+            addItemErrorLabel.Text = "";
             var largestGenreId = context.Genres.OrderBy(i => i.GenresId).Last().GenresId;
             if (!genreIdTextBox.Text.All(Char.IsDigit)
                 || genreIdTextBox.Text.Length == 0
@@ -106,7 +107,6 @@ namespace rental_app.Forms
                 addItemErrorLabel.Text += " wrong price";
                 return false;
             }
-
             return true;
         }
         private void addItemButton_Click(object sender, EventArgs e)
@@ -138,15 +138,16 @@ namespace rental_app.Forms
 
         private void removeItemButton_Click(object sender, EventArgs e)
         {
+            
+            if (itemIdToRemoveTextBox.Text.Length == 0 || !itemIdToRemoveTextBox.Text.All(Char.IsDigit))
+            {
+                MessageBox.Show("Bad item ID", "Error");
+                return;
+            }
             Rental rental = context.Rentals.Include(r => r.Customer).FirstOrDefault(r => r.ItemId == Int32.Parse(itemIdToRemoveTextBox.Text));
             if(rental != null)
             {
                 MessageBox.Show("This item is currently rented by user: " + rental.Customer.Username, "Error");
-                return;
-            }
-            if (itemIdToRemoveTextBox.Text.Length == 0)
-            {
-                MessageBox.Show("Bad item ID", "Error");
                 return;
             }
             Item itemToRemove = context.Items.FirstOrDefault(i => i.ItemId == Int32.Parse(itemIdToRemoveTextBox.Text));
@@ -190,33 +191,9 @@ namespace rental_app.Forms
 
         }
 
-        private void addItemTypeButton_Click(object sender, EventArgs e)
-        {
-            if (!addItemTypeTextBox.Text.All(Char.IsLetter) || addItemTypeTextBox.Text.Length < 2)
-            {
-                MessageBox.Show("Bad item type", "Error");
-                return;
-            }
-            ItemType itemType = context.ItemTypes.FirstOrDefault(it => it.Type == addItemTypeTextBox.Text);
-            if (itemType != null)
-            {
-                MessageBox.Show("Item type already exists", "Error");
-                return;
-            }
-
-            if (MessageBox.Show("Are you sure you want to add item type : " + addItemTypeTextBox.Text + " ? ", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                ItemType resultItemType = new ItemType(addItemTypeTextBox.Text);
-                context.ItemTypes.Add(resultItemType);
-                context.SaveChanges();
-                reloadChangesInItemTypesGridView();
-                MessageBox.Show("Added item type successfully", "Success");
-            }
-        }
-
         private void removeGenreButton_Click(object sender, EventArgs e)
         {
-            if (genreIdToRemoveTextBox.Text.Length == 0)
+            if (genreIdToRemoveTextBox.Text.Length == 0 || !genreIdToRemoveTextBox.Text.All(Char.IsDigit))
             {
                 MessageBox.Show("Bad genre ID", "Error");
                 return;
@@ -237,27 +214,9 @@ namespace rental_app.Forms
             }
         }
 
-        private void removeItemTypeButton_Click(object sender, EventArgs e)
+        private void itemsGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (itemTypeIdToRemoveTextBox.Text.Length == 0)
-            {
-                MessageBox.Show("Bad item type ID", "Error");
-                return;
-            }
-            ItemType itemTypeToRemove = context.ItemTypes.FirstOrDefault(it => it.ItemTypeId == Int32.Parse(itemTypeIdToRemoveTextBox.Text));
-            if (itemTypeToRemove == null)
-            {
-                MessageBox.Show("Item type with id:" + itemIdToRemoveTextBox.Text + " doesn't exist", "Error");
-                return;
-            }
 
-            if (MessageBox.Show("Are you sure you want to remove this item type?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                context.ItemTypes.Remove(itemTypeToRemove);
-                context.SaveChanges();
-                MessageBox.Show("Removed item type successfully", "Success");
-                reloadChangesInItemTypesGridView();
-            }
         }
     }
 }

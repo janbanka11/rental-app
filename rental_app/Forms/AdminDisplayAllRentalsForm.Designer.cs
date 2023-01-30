@@ -46,9 +46,13 @@
             // 
             // rentalsGridView
             // 
+            this.rentalsGridView.AllowUserToAddRows = false;
+            this.rentalsGridView.AllowUserToDeleteRows = false;
+            this.rentalsGridView.BackgroundColor = System.Drawing.Color.White;
             this.rentalsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.rentalsGridView.Location = new System.Drawing.Point(12, 38);
             this.rentalsGridView.Name = "rentalsGridView";
+            this.rentalsGridView.ReadOnly = true;
             this.rentalsGridView.RowTemplate.Height = 25;
             this.rentalsGridView.Size = new System.Drawing.Size(767, 400);
             this.rentalsGridView.TabIndex = 27;
@@ -72,6 +76,7 @@
             this.Controls.Add(this.rentalsGridView);
             this.Controls.Add(this.goBackButton);
             this.Name = "AdminDisplayAllRentalsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminDisplayAllRentalsForm";
             this.Load += new System.EventHandler(this.AdminDisplayAllRentalsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rentalsGridView)).EndInit();

@@ -72,6 +72,7 @@
             this.Controls.Add(this.displayUserRentalsButton);
             this.Controls.Add(this.manageItemsButton);
             this.Name = "AdminSettingsControlForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminSettingsControlForm";
             this.Load += new System.EventHandler(this.AdminSettingsControlForm_Load);
             this.ResumeLayout(false);

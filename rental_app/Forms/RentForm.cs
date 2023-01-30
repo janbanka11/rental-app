@@ -66,6 +66,7 @@ namespace rental_app.Forms
 
         private void userRentButton_Click(object sender, EventArgs e)
         {
+            if(itemsGridView.Rows.Count == 0) return;
             var cellValue = itemsGridView.Rows[itemsGridView.CurrentCell.RowIndex].Cells[0].Value.ToString();
             if (cellValue.IsNullOrEmpty())
             {

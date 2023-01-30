@@ -65,6 +65,7 @@
             // 
             this.itemsGridView.AllowUserToAddRows = false;
             this.itemsGridView.AllowUserToDeleteRows = false;
+            this.itemsGridView.BackgroundColor = System.Drawing.Color.White;
             this.itemsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.itemsGridView.Location = new System.Drawing.Point(39, 37);
             this.itemsGridView.Name = "itemsGridView";
@@ -171,6 +172,7 @@
             this.Controls.Add(this.itemsGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UserRentalsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserRentalsForm";
             this.Load += new System.EventHandler(this.UserRentalsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.itemsGridView)).EndInit();
