@@ -29,17 +29,7 @@ namespace rental_app.Forms
         }
         private decimal getSumPriceOfItemsByType(string type)
         {
-            decimal sum = 0;
-
-            foreach (var rental in rentals)
-            {
-                if (rental.ItemType == type)
-                {
-                    sum += rental.RentalPrice;
-                }
-            }
-
-            return sum;
+            return rentals.Where(r => r.ItemType == type).Sum(r => r.RentalPrice);
         }
         private void initSumLabels()
         {
