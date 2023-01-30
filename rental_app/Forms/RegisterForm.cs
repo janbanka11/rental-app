@@ -20,6 +20,12 @@ namespace rental_app.Forms
         {
             errorLabel.Text = "";
             bool hasErrorOccured = false;
+            Customer customer = context.Customers.FirstOrDefault(c => c.Username == usernameTextBox.Text);
+            if(customer != null)
+            {
+                errorLabel.Text = " user already exists, ";
+                hasErrorOccured = true;
+            }
             if (isIllegalCharInInput(usernameTextBox.Text))
             {
                 errorLabel.Text += " username, ";

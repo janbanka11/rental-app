@@ -41,7 +41,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.addItemButton = new System.Windows.Forms.Button();
             this.removeItemButton = new System.Windows.Forms.Button();
-            this.itemIdTextBox = new System.Windows.Forms.TextBox();
+            this.itemIdToRemoveTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.addItemErrorLabel = new System.Windows.Forms.Label();
             this.itemsGridView = new System.Windows.Forms.DataGridView();
@@ -51,12 +51,25 @@
             this.label8 = new System.Windows.Forms.Label();
             this.addItemTypeTextBox = new System.Windows.Forms.TextBox();
             this.addItemTypeButton = new System.Windows.Forms.Button();
+            this.genresGridView = new System.Windows.Forms.DataGridView();
+            this.itemTypesGridView = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.genreIdToRemoveTextBox = new System.Windows.Forms.TextBox();
+            this.removeGenreButton = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.itemTypeIdToRemoveTextBox = new System.Windows.Forms.TextBox();
+            this.removeItemTypeButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.itemsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genresGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemTypesGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // goBackButton
             // 
-            this.goBackButton.Location = new System.Drawing.Point(1187, 12);
+            this.goBackButton.Location = new System.Drawing.Point(1187, 16);
             this.goBackButton.Name = "goBackButton";
             this.goBackButton.Size = new System.Drawing.Size(75, 23);
             this.goBackButton.TabIndex = 26;
@@ -66,7 +79,7 @@
             // 
             // genreIdTextBox
             // 
-            this.genreIdTextBox.Location = new System.Drawing.Point(120, 51);
+            this.genreIdTextBox.Location = new System.Drawing.Point(94, 180);
             this.genreIdTextBox.MaxLength = 2;
             this.genreIdTextBox.Name = "genreIdTextBox";
             this.genreIdTextBox.Size = new System.Drawing.Size(100, 23);
@@ -74,7 +87,7 @@
             // 
             // typeIdTextBox
             // 
-            this.typeIdTextBox.Location = new System.Drawing.Point(120, 102);
+            this.typeIdTextBox.Location = new System.Drawing.Point(94, 231);
             this.typeIdTextBox.MaxLength = 2;
             this.typeIdTextBox.Name = "typeIdTextBox";
             this.typeIdTextBox.Size = new System.Drawing.Size(100, 23);
@@ -82,7 +95,7 @@
             // 
             // authorTextBox
             // 
-            this.authorTextBox.Location = new System.Drawing.Point(120, 161);
+            this.authorTextBox.Location = new System.Drawing.Point(94, 290);
             this.authorTextBox.MaxLength = 35;
             this.authorTextBox.Name = "authorTextBox";
             this.authorTextBox.Size = new System.Drawing.Size(100, 23);
@@ -90,7 +103,7 @@
             // 
             // titleTextBox
             // 
-            this.titleTextBox.Location = new System.Drawing.Point(120, 222);
+            this.titleTextBox.Location = new System.Drawing.Point(94, 351);
             this.titleTextBox.MaxLength = 35;
             this.titleTextBox.Name = "titleTextBox";
             this.titleTextBox.Size = new System.Drawing.Size(100, 23);
@@ -98,7 +111,7 @@
             // 
             // priceTextBox
             // 
-            this.priceTextBox.Location = new System.Drawing.Point(120, 282);
+            this.priceTextBox.Location = new System.Drawing.Point(94, 411);
             this.priceTextBox.MaxLength = 6;
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(100, 23);
@@ -107,7 +120,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 54);
+            this.label1.Location = new System.Drawing.Point(28, 183);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 15);
             this.label1.TabIndex = 32;
@@ -116,7 +129,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 105);
+            this.label2.Location = new System.Drawing.Point(16, 234);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 15);
             this.label2.TabIndex = 33;
@@ -125,7 +138,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(54, 164);
+            this.label3.Location = new System.Drawing.Point(28, 293);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 15);
             this.label3.TabIndex = 34;
@@ -134,7 +147,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 225);
+            this.label4.Location = new System.Drawing.Point(28, 354);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 15);
             this.label4.TabIndex = 35;
@@ -143,7 +156,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(54, 285);
+            this.label5.Location = new System.Drawing.Point(28, 414);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 15);
             this.label5.TabIndex = 36;
@@ -151,7 +164,7 @@
             // 
             // addItemButton
             // 
-            this.addItemButton.Location = new System.Drawing.Point(108, 335);
+            this.addItemButton.Location = new System.Drawing.Point(82, 464);
             this.addItemButton.Name = "addItemButton";
             this.addItemButton.Size = new System.Drawing.Size(112, 23);
             this.addItemButton.TabIndex = 37;
@@ -161,7 +174,7 @@
             // 
             // removeItemButton
             // 
-            this.removeItemButton.Location = new System.Drawing.Point(327, 83);
+            this.removeItemButton.Location = new System.Drawing.Point(297, 127);
             this.removeItemButton.Name = "removeItemButton";
             this.removeItemButton.Size = new System.Drawing.Size(75, 23);
             this.removeItemButton.TabIndex = 38;
@@ -169,18 +182,18 @@
             this.removeItemButton.UseVisualStyleBackColor = true;
             this.removeItemButton.Click += new System.EventHandler(this.removeItemButton_Click);
             // 
-            // itemIdTextBox
+            // itemIdToRemoveTextBox
             // 
-            this.itemIdTextBox.Location = new System.Drawing.Point(315, 54);
-            this.itemIdTextBox.MaxLength = 1000;
-            this.itemIdTextBox.Name = "itemIdTextBox";
-            this.itemIdTextBox.Size = new System.Drawing.Size(100, 23);
-            this.itemIdTextBox.TabIndex = 39;
+            this.itemIdToRemoveTextBox.Location = new System.Drawing.Point(285, 98);
+            this.itemIdToRemoveTextBox.MaxLength = 1000;
+            this.itemIdToRemoveTextBox.Name = "itemIdToRemoveTextBox";
+            this.itemIdToRemoveTextBox.Size = new System.Drawing.Size(100, 23);
+            this.itemIdToRemoveTextBox.TabIndex = 39;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(260, 57);
+            this.label6.Location = new System.Drawing.Point(230, 101);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 15);
             this.label6.TabIndex = 40;
@@ -198,17 +211,16 @@
             // itemsGridView
             // 
             this.itemsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.itemsGridView.Location = new System.Drawing.Point(421, 41);
+            this.itemsGridView.Location = new System.Drawing.Point(421, 54);
             this.itemsGridView.Name = "itemsGridView";
             this.itemsGridView.RowTemplate.Height = 25;
             this.itemsGridView.Size = new System.Drawing.Size(841, 343);
             this.itemsGridView.TabIndex = 42;
-            this.itemsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.itemsGridView_CellContentClick);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(238, 169);
+            this.label7.Location = new System.Drawing.Point(208, 359);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 15);
             this.label7.TabIndex = 45;
@@ -216,7 +228,7 @@
             // 
             // addGenreTextBox
             // 
-            this.addGenreTextBox.Location = new System.Drawing.Point(315, 161);
+            this.addGenreTextBox.Location = new System.Drawing.Point(285, 351);
             this.addGenreTextBox.MaxLength = 25;
             this.addGenreTextBox.Name = "addGenreTextBox";
             this.addGenreTextBox.Size = new System.Drawing.Size(100, 23);
@@ -224,7 +236,7 @@
             // 
             // addGenreButton
             // 
-            this.addGenreButton.Location = new System.Drawing.Point(327, 190);
+            this.addGenreButton.Location = new System.Drawing.Point(297, 380);
             this.addGenreButton.Name = "addGenreButton";
             this.addGenreButton.Size = new System.Drawing.Size(75, 23);
             this.addGenreButton.TabIndex = 43;
@@ -235,7 +247,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(238, 285);
+            this.label8.Location = new System.Drawing.Point(218, 443);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 15);
             this.label8.TabIndex = 48;
@@ -243,7 +255,7 @@
             // 
             // addItemTypeTextBox
             // 
-            this.addItemTypeTextBox.Location = new System.Drawing.Point(315, 277);
+            this.addItemTypeTextBox.Location = new System.Drawing.Point(285, 440);
             this.addItemTypeTextBox.MaxLength = 25;
             this.addItemTypeTextBox.Name = "addItemTypeTextBox";
             this.addItemTypeTextBox.Size = new System.Drawing.Size(100, 23);
@@ -251,7 +263,7 @@
             // 
             // addItemTypeButton
             // 
-            this.addItemTypeButton.Location = new System.Drawing.Point(315, 306);
+            this.addItemTypeButton.Location = new System.Drawing.Point(285, 469);
             this.addItemTypeButton.Name = "addItemTypeButton";
             this.addItemTypeButton.Size = new System.Drawing.Size(96, 23);
             this.addItemTypeButton.TabIndex = 46;
@@ -259,11 +271,124 @@
             this.addItemTypeButton.UseVisualStyleBackColor = true;
             this.addItemTypeButton.Click += new System.EventHandler(this.addItemTypeButton_Click);
             // 
+            // genresGridView
+            // 
+            this.genresGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.genresGridView.Location = new System.Drawing.Point(421, 440);
+            this.genresGridView.Name = "genresGridView";
+            this.genresGridView.RowTemplate.Height = 25;
+            this.genresGridView.Size = new System.Drawing.Size(381, 188);
+            this.genresGridView.TabIndex = 49;
+            // 
+            // itemTypesGridView
+            // 
+            this.itemTypesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.itemTypesGridView.Location = new System.Drawing.Point(881, 440);
+            this.itemTypesGridView.Name = "itemTypesGridView";
+            this.itemTypesGridView.RowTemplate.Height = 25;
+            this.itemTypesGridView.Size = new System.Drawing.Size(381, 188);
+            this.itemTypesGridView.TabIndex = 50;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(421, 26);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(84, 25);
+            this.label9.TabIndex = 51;
+            this.label9.Text = "All items";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(421, 411);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(96, 25);
+            this.label10.TabIndex = 52;
+            this.label10.Text = "All genres";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(881, 411);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(125, 25);
+            this.label11.TabIndex = 53;
+            this.label11.Text = "All item types";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(230, 178);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(52, 15);
+            this.label12.TabIndex = 56;
+            this.label12.Text = "Genre ID";
+            // 
+            // genreIdToRemoveTextBox
+            // 
+            this.genreIdToRemoveTextBox.Location = new System.Drawing.Point(285, 175);
+            this.genreIdToRemoveTextBox.MaxLength = 1000;
+            this.genreIdToRemoveTextBox.Name = "genreIdToRemoveTextBox";
+            this.genreIdToRemoveTextBox.Size = new System.Drawing.Size(100, 23);
+            this.genreIdToRemoveTextBox.TabIndex = 55;
+            // 
+            // removeGenreButton
+            // 
+            this.removeGenreButton.Location = new System.Drawing.Point(297, 204);
+            this.removeGenreButton.Name = "removeGenreButton";
+            this.removeGenreButton.Size = new System.Drawing.Size(75, 23);
+            this.removeGenreButton.TabIndex = 54;
+            this.removeGenreButton.Text = "Remove item";
+            this.removeGenreButton.UseVisualStyleBackColor = true;
+            this.removeGenreButton.Click += new System.EventHandler(this.removeGenreButton_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(212, 258);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(71, 15);
+            this.label13.TabIndex = 59;
+            this.label13.Text = "Item type ID";
+            // 
+            // itemTypeIdToRemoveTextBox
+            // 
+            this.itemTypeIdToRemoveTextBox.Location = new System.Drawing.Point(289, 255);
+            this.itemTypeIdToRemoveTextBox.MaxLength = 1000;
+            this.itemTypeIdToRemoveTextBox.Name = "itemTypeIdToRemoveTextBox";
+            this.itemTypeIdToRemoveTextBox.Size = new System.Drawing.Size(100, 23);
+            this.itemTypeIdToRemoveTextBox.TabIndex = 58;
+            // 
+            // removeItemTypeButton
+            // 
+            this.removeItemTypeButton.Location = new System.Drawing.Point(301, 284);
+            this.removeItemTypeButton.Name = "removeItemTypeButton";
+            this.removeItemTypeButton.Size = new System.Drawing.Size(75, 23);
+            this.removeItemTypeButton.TabIndex = 57;
+            this.removeItemTypeButton.Text = "Remove item";
+            this.removeItemTypeButton.UseVisualStyleBackColor = true;
+            this.removeItemTypeButton.Click += new System.EventHandler(this.removeItemTypeButton_Click);
+            // 
             // AdminItemsManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1278, 396);
+            this.ClientSize = new System.Drawing.Size(1278, 655);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.itemTypeIdToRemoveTextBox);
+            this.Controls.Add(this.removeItemTypeButton);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.genreIdToRemoveTextBox);
+            this.Controls.Add(this.removeGenreButton);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.itemTypesGridView);
+            this.Controls.Add(this.genresGridView);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.addItemTypeTextBox);
             this.Controls.Add(this.addItemTypeButton);
@@ -273,7 +398,7 @@
             this.Controls.Add(this.itemsGridView);
             this.Controls.Add(this.addItemErrorLabel);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.itemIdTextBox);
+            this.Controls.Add(this.itemIdToRemoveTextBox);
             this.Controls.Add(this.removeItemButton);
             this.Controls.Add(this.addItemButton);
             this.Controls.Add(this.label5);
@@ -293,6 +418,8 @@
             this.Text = "AdminItemsManagementForm";
             this.Load += new System.EventHandler(this.AdminItemsManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.itemsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genresGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemTypesGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,7 +440,7 @@
         private Label label5;
         private Button addItemButton;
         private Button removeItemButton;
-        private TextBox itemIdTextBox;
+        private TextBox itemIdToRemoveTextBox;
         private Label label6;
         private Label addItemErrorLabel;
         private DataGridView itemsGridView;
@@ -323,5 +450,16 @@
         private Label label8;
         private TextBox addItemTypeTextBox;
         private Button addItemTypeButton;
+        private DataGridView genresGridView;
+        private DataGridView itemTypesGridView;
+        private Label label9;
+        private Label label10;
+        private Label label11;
+        private Label label12;
+        private TextBox genreIdToRemoveTextBox;
+        private Button removeGenreButton;
+        private Label label13;
+        private TextBox itemTypeIdToRemoveTextBox;
+        private Button removeItemTypeButton;
     }
 }

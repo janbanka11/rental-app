@@ -41,6 +41,7 @@
             // 
             this.helloLabel.AutoSize = true;
             this.helloLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.helloLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.helloLabel.Location = new System.Drawing.Point(12, 9);
             this.helloLabel.Name = "helloLabel";
             this.helloLabel.Size = new System.Drawing.Size(67, 28);
@@ -49,7 +50,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel1.Controls.Add(this.helloLabel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -59,7 +60,7 @@
             // 
             // rentButton
             // 
-            this.rentButton.Location = new System.Drawing.Point(113, 132);
+            this.rentButton.Location = new System.Drawing.Point(117, 121);
             this.rentButton.Name = "rentButton";
             this.rentButton.Size = new System.Drawing.Size(209, 89);
             this.rentButton.TabIndex = 3;
@@ -69,7 +70,7 @@
             // 
             // rentalsButton
             // 
-            this.rentalsButton.Location = new System.Drawing.Point(379, 132);
+            this.rentalsButton.Location = new System.Drawing.Point(383, 121);
             this.rentalsButton.Name = "rentalsButton";
             this.rentalsButton.Size = new System.Drawing.Size(200, 89);
             this.rentalsButton.TabIndex = 4;
@@ -79,7 +80,7 @@
             // 
             // adminSettingsButton
             // 
-            this.adminSettingsButton.Location = new System.Drawing.Point(252, 243);
+            this.adminSettingsButton.Location = new System.Drawing.Point(256, 232);
             this.adminSettingsButton.Name = "adminSettingsButton";
             this.adminSettingsButton.Size = new System.Drawing.Size(200, 89);
             this.adminSettingsButton.TabIndex = 5;
@@ -92,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(705, 367);
+            this.ClientSize = new System.Drawing.Size(705, 351);
             this.Controls.Add(this.adminSettingsButton);
             this.Controls.Add(this.rentalsButton);
             this.Controls.Add(this.rentButton);
